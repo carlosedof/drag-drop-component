@@ -24,5 +24,4 @@ export class MarksViewComponent {
   ) {
     this.mapData = this.storageService.retrieveData();
   }
-
 }

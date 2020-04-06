@@ -1,0 +1,98 @@
+<div>
+  <div class="mb-1" *ngIf="!readonly">
+    <p-accordion class="mt-3 mb-5 image-accordion-upload">
+      <p-accordionTab header="Image base upload" [selected]="[mapData?.id]">
+        <div class="ui-g d-flex flex-column">
+          <label>This image is the background of droppable area</label>
+          <div class="d-flex mt-1">
+            <div class="ui-g-3">
+              <input type="file"
+                     class="inputfile"
+                     (change)="fileChangeEvent($event)" id="inputFileText"/>
+              <label for="inputFileText" class="btn clicable upload-button">
+                <i class="fa fa-search mr-1"></i>Upload Image</label>
+            </div>
+            <div class="ui-g-3">
+              <button type="button"
+                      class="delete-button"
+                      (click)="removeImage($event)" id="removeImageBtn">
+                <label for="removeImageBtn" class="btn clicable">
+                  <i class="fa fa-trash mr-1"></i>Remove Image
+                </label>
+              </button>
+            </div>
+          </div>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+  <div class="d-flex drag-container">
+    <div class="ui-g-4 ui-md-3 ui-sm-12 pos-relative aps-container" *ngIf="!readonly">
+      <div
+        @fadeInSelfFast
+        @fadeOutSelf
+        pDroppable="dd"
+        (onDrop)="droppedOut(); displayInfoLayer = false"
+        class="d-flex drag-layer"
+        *ngIf="displayInfoLayer">
+        <i class="fa fa-trash trash-icon white-text pull-right" @fadeInSelf
+           aria-hidden="true"></i>
+      </div>
+      <ul class="my-2 p-0">
+        <li *ngIf="unmappedItems?.length === 0"
+            class="empty-list-msg"
+            @fadeInSelfFast
+            @fadeOutSelf>
+          <label>There is no items to display</label>
+        </li>
+        <li
+          @fadeInSelfFast
+          @fadeOutSelf
+          *ngFor="let uit of unmappedItems"
+          pDraggable="dd"
+          class="item-li px-2 py-1"
+          (mouseup)="closeInfolayer();"
+          (onDragStart)="dragStart(uit)"
+          (onDragEnd)="closeInfolayer(); displayInfoLayer = false">
+          {{ uit?.name }}
+          <i class="fa fa-arrows pull-right" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="ui-g-8 ui-md-9 ui-sm-12 pos-relative text-center image-container-size"
+         [ngClass]="{'mx-auto full-width': readonly}">
+      <img
+        pDroppable="dd"
+        id="image" #image
+        [ngClass]="{'image-placeholder': !baseImage}"
+        (mouseup)="closeInfolayer();"
+        (onDrop)="dropped($event)"
+        class="full-width full-height"
+        [src]="baseImage ? baseImage : 'assets/images/image-placeholder.jpg'">
+      <div
+        @fadeInSelfFast
+        @fadeOutSelf
+        pDroppable="dd"
+        (mouseup)="closeInfolayer();"
+        (onDrop)="displayInfoLayer = false; dropped($event);"
+        class="d-flex drag-layer"
+        *ngIf="displayInfoLayer && !readonly">
+        <p class="info-messages">Drag here</p>
+        <i class="fa fa-object-group drop-icon" aria-hidden="true"></i>
+      </div>
+      <div pDraggable="dd" (onDragStart)="setDraggingItem(a);"
+           (onDragEnd)="closeInfolayer(); displayInfoLayer = false"
+           (mouseup)="closeInfolayer();"
+           class="it-indicator normal" *ngFor="let a of mapData?.items"
+           [ngStyle]="{top: a.y + '%', left: a.x + '%'}">
+        <i class="fa fa-check-circle-o it-icon" (mouseup)="closeInfolayer();" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex flex-column instructions">
+  <p>Instructions:</p>
+  <label>- Upload an image to be the background of your positioning;</label>
+  <label>- Grab an item from left column and drag it to image container;</label>
+  <label>You can store all positions and rerender at another page</label>
+</div>

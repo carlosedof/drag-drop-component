@@ -1,0 +1,235 @@
+@import 'src/styles';
+
+.it-indicator {
+  background-color: #000;
+  border-radius: 10px;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  box-shadow: 1px 3px 17px black !important;
+  transition: all 0.5s ease;
+}
+
+.normal {
+  background-color: black;
+}
+
+.info-messages {
+  font-size: x-large;
+  font-family: montserrat-bold;
+  text-shadow: 2px 2px black;
+}
+
+.internal-loader {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.55);
+  transition: all 1s ease;
+}
+
+.block-layer {
+  z-index: 2;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+}
+
+.draggin-del-layer {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+
+.trash-icon, .drop-icon {
+  margin: 0 auto; font-size: 4rem;align-self: center;
+}
+
+.it-icon {
+  color: $text-primary; font-size: x-large;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.image-thumbnail-detail {
+  border: 2px gray solid;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+}
+
+.image-container-size {
+  min-height: 150px;
+  min-width: 300px;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 2px 2px 7px #000;
+}
+
+.image-placeholder {
+  opacity: 0.3;
+}
+
+#image {
+  border-radius: 8px
+}
+
+.item-li {
+  background: $container-secondary;
+  border-radius: 6px;
+  min-height: 50px;
+  margin: 1rem;
+  box-shadow: 2.5px 2.5px 8px black;
+  display: flex;
+  font-family: montserrat-regular;
+  justify-content: space-between;
+  padding: 0 5%;
+  align-items: center;
+  color: $text-primary;
+}
+
+.aps-container {
+  background: $container-primary;
+  padding: 0;
+  box-shadow: 2px 2px 7px #000;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+@media (max-width: 640px) {
+  .drag-container {
+    flex-direction: column;
+  }
+}
+
+.empty-list-msg {
+  list-style-type: none;
+  margin: 1rem;
+  text-align: center;
+  font-weight: 800;
+  font-family: montserrat-regular;
+  color: $text-primary;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  text-align: center;
+  display: inline-block;
+  background-color: $btn-confirm;
+  border-color: $btn-confirm;
+  width: 220px;
+  height: 35px;
+  padding: 8px 15px;
+  font-size: small;
+  font-family: montserrat-bold;
+  text-transform: uppercase;
+  color: $text-primary;
+  border-radius: 10px;
+  box-shadow: 2.5px 2.5px 8px black;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  color: $text-primary;
+  background-color: $btn-confirm;
+  border-color: $btn-confirm;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+ul {
+  padding: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.drag-layer {
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  color: $text-primary;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  transition: all 1s ease;
+}
+
+.white-text {
+  color: $text-primary;
+}
+
+.delete-button {
+  background: $btn-cancel;
+  padding: 8px 15px;
+  font-size: small;
+  text-transform: uppercase;
+  color: $text-primary;
+  font-family: montserrat-bold;
+  width: 220px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2.5px 2.5px 8px black;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.instructions {
+  p {
+    font-size: medium;
+  }
+  label {
+    font-size: small;
+    margin-bottom: 5px;
+  }
+  font-family: montserrat-regular;
+}
+
+.disabled-item {
+  opacity: 0.3;
+}

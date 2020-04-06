@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: montserrat-bold;
+  src: url('/assets/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: montserrat-semibold;
+  src: url('/assets/fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: montserrat-extrabold;
+  src: url('/assets/fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: montserrat-medium;
+  src: url('/assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: montserrat-regular;
+  src: url('/assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: montserrat-light;
+  src: url('//assets/fonts/Montserrat-Light.ttf');
+}
+
+$background: #343434;
+$btn-confirm: #595c90;
+$btn-cancel: #b4534b;
+$accordion-header: #595c90;
+$accordion-body: transparent;
+$text-primary: #ffffff;
+$text-secondary: #ff003e;
+$container-primary: #575a64;
+$container-secondary: #595c90;
+
+html {
+  background: $background;
+  height: 100%;
+  color: $text-primary;
+}
+
+body .ui-accordion {
+  margin-bottom: 10px;
+  font-family: montserrat-regular;
+}
+
+body .image-accordion-upload .ui-widget-content {
+  background-color: $accordion-body;
+  border: none !important;
+}
+
+body .ui-accordion .ui-accordion-header {
+  background: $accordion-header;
+  box-shadow: 2.5px 2.5px 8px black;
+  color: white;
+  border-radius: 10px;
+}
+
+body .ui-accordion-content {
+  border-radius: 0px 0px 8px 8px;
+}
+
+*:focus {
+  outline: none;
+}

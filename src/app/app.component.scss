@@ -1,0 +1,20 @@
+.header-container {
+  margin-bottom: 15px;
+}
+
+.page-title {
+  font-family: montserrat-bold;
+  font-size: xx-large;
+  margin-right: 30px;
+}
+
+.nav-item {
+  font-family: montserrat-semibold;
+  font-size: large;
+  margin-right: 15px;
+}
+
+.page-title:hover, .nav-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

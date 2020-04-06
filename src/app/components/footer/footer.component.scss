@@ -1,0 +1,19 @@
+@import 'src/styles';
+
+.footer-container {
+  font-family: montserrat-regular;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-social {
+  margin-top: 10px;
+  a {
+    color: white;
+    margin: 8px;
+    font-size: x-large;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+}

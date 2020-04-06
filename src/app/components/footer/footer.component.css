@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+td, th {
+  text-align: center !important;
+  width: 8%;
+  overflow-wrap: break-word;
+}
+
+.testeHover {
+  background: url("../../assets/images/gravatar.png") no-repeat;
+  background-size: 90%;
+  width: 150px;
+  height: 150px;
+}
+
+.testeHover:hover {
+  background: url("../../assets/images/gravataedit.png") no-repeat;
+  background-size: 90%;
+  width: 150px;
+  height: 150px;
+  transition: all 1500ms ease;
+  cursor: pointer;
+}
+
+button {
+  margin-right: 10px;
+}

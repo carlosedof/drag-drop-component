@@ -1,27 +1,31 @@
-# DragdropInsideImage
+# Componente Drag Drop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Projeto em Angular 9 que inclui um componente de Drag and Drop do PrimeNg adaptado para incluir pontos em um quadro, podendo ser utilizada uma imagem como background.
 
-## Development server
+## Demo
+A demonstração da funcionalidade pode ser acessada [aqui](https://drag-drop-component.herokuapp.com/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+Para subir a aplicação basta rodar o comando abaixo, que instalará as dependências e subirá o projeto por padrão na porta 4200.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+yarn install && yarn start
+```
 
-## Build
+## Funcionalidade
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Trata-se de uma lista de itens que podem ser distribuídos em um quadro ou imagem, há um cálculo de proporção envolvendo o tamanho do container, por isso, independente do tamanho da janela do browser, o mapeamento deve permanecer constante.
 
-## Running unit tests
+## Caso de uso
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Recurso foi utilizado na implementação de um mapeamento de dispositivos de acesso (leitor de digital) em cima de uma imagem de planta baixa de uma empresa. Após o mapeamento foi possível implementar uma lógica para monitorar em tempo real os eventos ocorridos em cada ponto.
 
-## Running end-to-end tests
+## Implementação e Recursos Externos
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Foram utilizadas algumas libs para facilitar a implementação da funcionalidade ou do layout, sendo elas: PrimeNG, FontAwesome
 
-## Further help
+## Contribuições
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Indicações de bugs ou melhorias são bem vindas.
+

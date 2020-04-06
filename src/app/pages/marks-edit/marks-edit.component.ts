@@ -11,9 +11,7 @@ import {StorageService} from '../../services/storage.service';
 })
 
 export class MarksEditComponent {
-  mapData: MapData = {
-    items: []
-  };
+  mapData: MapData;
   unmappedItems: Mark[] = [
     {id: 1, name: 'item 1'},
     {id: 2, name: 'item 2'}
@@ -22,6 +20,8 @@ export class MarksEditComponent {
   constructor(
     private storageService: StorageService
   ) {
-    this.mapData = this.storageService.retrieveData();
+    this.mapData = this.storageService.retrieveData() ? this.storageService.retrieveData() : {
+      items: []
+    };
   }
 }

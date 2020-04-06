@@ -7,10 +7,10 @@ A demonstração da funcionalidade pode ser acessada [aqui](https://drag-drop-co
 
 ## Instalação
 
-Para subir a aplicação basta rodar o comando abaixo, que instalará as dependências e subirá o projeto por padrão na porta 4200.
+Para subir a aplicação basta rodar os comandos abaixo, que primeiros instalará as dependências e após isso subirá o projeto por padrão na porta 4200.
 
 ```bash
-yarn install && yarn start
+yarn install && yarn startlocal
 ```
 
 ## Funcionalidade

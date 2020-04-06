@@ -211,6 +211,20 @@ ul {
   box-shadow: 2.5px 2.5px 8px black;
 }
 
+.clear-button {
+  background: $btn-clear;
+  padding: 8px 15px;
+  font-size: small;
+  text-transform: uppercase;
+  color: $text-primary;
+  font-family: montserrat-bold;
+  width: 220px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2.5px 2.5px 8px black;
+}
+
 .mt-1 {
   margin-top: 10px;
 }

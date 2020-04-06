@@ -50,6 +50,7 @@ export class DragDropComponent implements OnInit {
   ngOnInit() {
     this.unmappedItems = this.unmappedItems
       .filter( uit => !this.findInsideMapItems(uit.id));
+    this.baseImage = this.mapData.image;
   }
 
   findInsideMapItems(id: number) {
@@ -65,6 +66,7 @@ export class DragDropComponent implements OnInit {
       this.mapData.items = this.mapData.items.filter( i => i.x !== this.draggingItem.x || i.y !== this.draggingItem.y);
       if (!this.unmappedItems.find( uit => this.draggingItem.id === uit.id)) {
         this.unmappedItems.push(this.fullList.find( uit => this.draggingItem.id === uit.id));
+        this.storageService.storeData({...this.mapData, image: this.baseImage});
       }
     }
   }
@@ -125,5 +127,13 @@ export class DragDropComponent implements OnInit {
     e.preventDefault();
     this.baseImage = null;
     this.storageService.removeImage();
+  }
+
+  clearData(e) {
+    e.preventDefault();
+    this.baseImage = null;
+    this.mapData = {items: []};
+    this.unmappedItems = [...this.fullList];
+    this.storageService.clearData();
   }
 }
